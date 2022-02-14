@@ -81,13 +81,13 @@
 		</div>
 		
 		<div style=" width:100%; height: 92%; display:flex; align-items:center; flex-direction:column">			
-			<div id="chatbang" style="width:80%; height:100px;margin-top:20px; cursor: pointer;" onclick="location.href='chatview.jsp'">
+			<div id="chatbang" style="width:80%; height:100px;margin-top:20px; cursor: pointer;">
+				<a href="<%= request.getContextPath() %>/chat/ChatGet.do">채팅방</a>				
+			</div>
+			<div style="width:80%; height:100px;margin-top:20px;cursor: pointer;" onclick="location.href='<%= request.getContextPath() %>/chat/ChatGet.do'">
 				채팅방				
 			</div>
-			<div style="width:80%; height:100px;margin-top:20px;cursor: pointer;" onclick="location.href='chatview.jsp'">
-				채팅방				
-			</div>
-			<div style="width:80%; height:100px;margin-top:20px;cursor: pointer;" onclick="location.href='chatview.jsp'">
+			<div style="width:80%; height:100px;margin-top:20px;cursor: pointer;" onclick="location.href='/chat/ChatGet.do'">
 				채팅방				
 			</div>
 		</div>

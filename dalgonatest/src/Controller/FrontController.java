@@ -33,6 +33,11 @@ public class FrontController extends HttpServlet {
 			System.out.println("chat");
 			ChatController cc = new ChatController();
 			cc.doGet(request, response);
+			
+		}else if(str[1].equals("staff")) {
+			System.out.println("staff");
+			StaffController sc = new StaffController();
+			sc.doGet(request, response);
 		}
 	}
 

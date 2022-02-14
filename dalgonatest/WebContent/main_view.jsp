@@ -63,7 +63,7 @@
 					
 				
 				function staff(){
-					location.href="/member/memberlist.do";
+					location.href="/staff/stafflist.do";
 				}
 			</script>
 		 	<style>

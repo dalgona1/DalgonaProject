@@ -79,6 +79,7 @@ public class MemberController extends HttpServlet {
 			uvo = udao.MemberLogin(USER_ID, USER_PW);
 			
 			HttpSession session = request.getSession();
+			session.setAttribute("no", uvo.getUSER_NO());
 			session.setAttribute("Id", uvo.getUSER_ID());
 			session.setAttribute("Pw", uvo.getUSER_PW());
 			

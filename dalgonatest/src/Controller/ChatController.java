@@ -34,13 +34,15 @@ public class ChatController extends HttpServlet {
 		String pj  	   = request.getContextPath();
 		String command = uri.substring(pj.length());
 		
+		ChatVO cvo = new ChatVO();
+		ChatDAO cdao = new ChatDAO();
+		UserVO uvo = new UserVO();
+		HttpSession session = request.getSession();
+		
 		if(command.equals("/chat/ChatSend.do")) {
 		
 			String msg = request.getParameter("msg");
 			System.out.println("msg"+msg);
-			
-			ChatVO cvo = new ChatVO();
-			ChatDAO cdao = new ChatDAO();
 			
 			cvo.setChat_NOTE(msg);
 			
@@ -50,6 +52,12 @@ public class ChatController extends HttpServlet {
 			 //response.sendRedirect(request.getContextPath() + "/login.jsp");
 //			RequestDispatcher disp = request.getRequestDispatcher("/login.jsp");
 //			disp.forward(request, response);
+		}
+		else if(command.equals("/chat/ChatGet.do")) {
+			System.out.println("현제 로그인 번호");
+			cdao.ChatSelect(uvo.getUSER_NO());
+			System.out.println("현제 로그인 번호" + uvo.getUSER_NO());
+			
 		}
 //		}else if(command.equals("/member/loginaciton.do")) {
 			

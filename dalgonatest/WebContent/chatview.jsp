@@ -37,16 +37,17 @@
 						alert("success");
 						$("#msg").val("");
 						$("#msg").focus();
-						//GetMsg();
+						GetMsg();
 					}
 				});
 			});	
 		});
+		var cno ="0";
 		function GetMsg()
 		{
 			$.ajax({
 				type : "get",
-				url : "<%=request.getContextPath()%>/chat/ChatSend.do?cno=" + cno,//0
+				url : "<%=request.getContextPath()%>/chat/ChatGet.do?cno=" + cno,
 				dataType : "html",
 				success : function(data)
 				{
